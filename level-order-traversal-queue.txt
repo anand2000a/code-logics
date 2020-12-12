@@ -1,0 +1,18 @@
+string level_order_traversal(BinaryTreeNode* root) {
+  string result = "";
+  queue<BinaryTreeNode*> q;
+  q.push(root);
+  while(!q.empty())
+  {
+    auto nd= q.front();
+    result+=to_string(nd->data);
+    result+=",";
+    if(nd->left)
+      q.push(nd->left);
+    if(nd->right)
+      q.push(nd->right);
+      q.pop();
+  }
+  
+  return result;
+}
